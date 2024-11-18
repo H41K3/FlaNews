@@ -1,0 +1,190 @@
+/*-------------------- ESTRUTURA PÁGINA --------------------*/
+body {
+  color: white; /* cor do texto da página */
+  font-family: Arial, sans-serif; /* fontes */
+  background-color: #222; /* cor de fundo */
+  line-height: 1.7; /* distância entre duas linhas */
+  padding-top: 10px; /* distância do conteúdo pro topo */
+}
+
+/*-------------------- BARRA DE ROLAGEM --------------------*/
+/* apenas para ocultamento */
+::-webkit-scrollbar {
+  width: 17px; /* propoção da barra (% oculta) */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #222; /* cor de fundo */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(58, 58, 58); /* cor do scroll */
+}
+
+/* ESTRUTURA MENU */
+
+/*-------------------- CONTEINER MENU --------------------*/
+header .container {
+  display: flex; /* horizontaliza */
+  align-items: center; /* alinha */
+  width: 100%; /* centaliza */
+  padding-left: 0.5%; /* distância pra margem esquerda */
+  padding-right: 1%; /* distância pra margem direita */
+}
+
+header {
+  background-color: rgb(214, 3, 3); /* cor de fundo */
+  box-shadow: 0 3px 20px black; /* sombra */
+  display: flex; /* centraliza itens */
+  top: 0%; /* margem de cima */
+  left: 0%; /* margem da esquerda */
+  right: 0%; /* margem da direita */
+  margin-left: 0.8%; /* ajusta a margem esquerda */
+  margin-right: 0.8%; /* ajusta a margem direita */
+  padding-top: 0.5%; /* distância da margem acima pros itens */
+  padding-bottom: 0.5%; /* distância da margem abaixo pros itens */
+  border-bottom-left-radius: 5px; /* arredonda a borda esquerda de baixo */
+  border-bottom-right-radius: 5px; /* arredonda a borda direita de baixo */
+  position: fixed; /* fixa o menu ao rolar pra baixo */
+  z-index: 1000; /* impede qualquer coisa de atrapalhar o menu ao rolar pra baixo */
+}
+
+/*-------------------- LOGO --------------------*/
+header .logo {
+  width: 3%; /* tamanho */
+  transition: transform 0.5s ease; /* tempo de transição suavizada */
+}
+
+header .logo:hover {
+  transform: scale(1.1); /* zoom */
+}
+
+/*-------------------- "FlaNews" --------------------*/
+header h1 {
+  color: white; /* cor */
+  font-size: 2.5rem; /* tamanho da fonte */
+  font-weight: 150; /* expessura */
+  font-style: italic;
+  margin: 0; /* zera todas as margens */
+  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
+}
+
+header h1:hover {
+  color: #222; /* cor da transição */
+  transform: scale(1.04); /* zoom */
+  text-shadow: 5px 5px 5px #222; /* sombra */
+}
+
+/*-------------------- BOTÕES --------------------*/
+nav a {
+  color: white; /* cor */
+  text-decoration: none; /* remove as linhas */
+  font-size: 1.2rem; /* tamanho da fonte */
+  padding: 0px 30px; /* distância pra margem e espaçamento */
+  display: flex; /* permite mover as palavras */
+  display: inline-block; /* alinha */
+  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
+  font-family: "Lucida Sans Regular";
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #222; /* cor da transição */
+  transform: scale(1.04); /* zoom */
+  text-shadow: 5px 5px 5px #222; /* sombra */
+}
+
+nav {
+  display: flex; /* permite mover as caixas dos botões */
+  justify-content: center; /* centraliza as caixas */
+  flex-grow: 1; /* permite que os itens ocupem o espaço restante de forma proporcional */
+}
+
+nav li {
+  display: inline; /* alinha as caixas lado a lado */
+}
+
+nav ul {
+  list-style-type: none; /* remove a bolinha das palavras */
+  margin: 0; /* zera todas as margens */
+}
+
+/*-------------------- BUSCAR --------------------*/
+.search-bar {
+  background-color: #222; /* cor de fundo */
+  color: #222; /* cor do texto digitado */
+  border: 1px #222; /* cor da borda */
+  border-radius: 5px; /* arredonda a borda */
+  padding: 8px 10px; /* espessura e largura */
+  font-size: 1rem; /* tamanho */
+  transition: transform 0.5s ease; /* tempo de transição suavizada */
+}
+
+.search-bar:hover {
+  transform: scale(1.04); /* zoom da barra */
+}
+
+.search-bar:focus {
+  background-color: white; /* cor da transição */
+  outline: none; /* remove a linha de contorno*/
+}
+
+/*------------------- "Calendário de Jogos" -------------------*/
+.games h2 {
+  color: white; /* cor da fonte */
+  font-size: 2.5rem; /* tamanho da fonte */
+  margin-bottom: 1.5%; /* define a distância para a caixa */
+  text-align: center; /* centraliza */
+}
+
+.games {
+  padding: 1%; /* distancia o conteúdo da página inteira de todas as margens */
+  padding-top: 3%; /* distancia o conteúdo da página inteira da margem do topo */
+}
+
+/*-------------------- CAIXAS  --------------------*/
+.game {
+  background-color: #222; /* cor de fundo */
+  color: white; /* cor do texto */
+  box-shadow: 0 3px 10px black; /* tamanho e cor da sombra */
+  padding-top: 1.5%; /* distancia o conteúdo da caixa inteira da margem de baixo */
+  padding-bottom: 1%; /* distancia o conteúdo da caixa inteira da margem de cima */
+  width: 35%; /* espessura */
+  margin: 0 auto 4.7rem; /* margens e espaçamento entre as caixas */
+  border-top-right-radius: 15px; /* arredonda a borda direita de cima */
+  border-bottom-left-radius: 15px; /* arredonda a borda esquerda de baixo */
+}
+
+/*-------------------- TÍTULO --------------------*/
+.game h3 {
+  color: rgb(214, 3, 3); /* cor do título */
+  font-size: 1.7rem; /* tamanho da fonte */
+  text-align: center; /* centraliza */
+  margin: 0; /* zera todas as margens */
+}
+
+/*-------------------- INFORMAÇÕES --------------------*/
+.game p {
+  color: white; /* cor do texto */
+  font-family: "Lucida Sans Regular"; /* fonte */
+  font-size: 1.2rem; /* tamanho da fonte */
+  text-align: center; /* centaliza */
+}
+
+/*-------------------- ESCUDOS --------------------*/
+.game h3 img {
+  margin: 0 3%; /* espaçamento enter o nome */
+  vertical-align: middle; /* alinha com o nome */
+}
+
+.game h3 img.logo {
+  width: 40px; /* tamanho/ proporção */
+}
+
+/*-------------------- RODAPÉ --------------------*/
+footer {
+  background-color: #222; /* cor de fundo */
+  color: white; /* cor do texto */
+  text-align: center; /* centraliza o texto */
+}
