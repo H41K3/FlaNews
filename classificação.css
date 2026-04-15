@@ -1,196 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@400;500;700&display=swap');
+
 /*-------------------- ESTRUTURA PÁGINA --------------------*/
 body {
-  color: white; /* cor do texto da página */
-  font-family: Arial, sans-serif; /* fontes */
-  background-color: #222; /* cor de fundo */
-  line-height: 1.7; /* distância entre duas linhas */
-  padding-top: 10px; /* distância do conteúdo pro topo */
+  color: white; 
+  font-family: 'Roboto', sans-serif; 
+  background-color: #222; 
+  line-height: 1.7; 
+  padding-top: 10px; 
+  margin: 0;
 }
 
-/*-------------------- BARRA DE ROLAGEM --------------------*/
-/* apenas para ocultamento */
-::-webkit-scrollbar {
-  width: 17px; /* propoção da barra (% oculta) */
+h1, h2, h3, nav a, th {
+  font-family: 'Montserrat', sans-serif;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #222; /* cor de fundo */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(58, 58, 58); /* cor do scroll */
-}
+::-webkit-scrollbar { width: 17px; }
+::-webkit-scrollbar-track { background-color: #222; }
+::-webkit-scrollbar-thumb { background-color: rgb(58, 58, 58); }
 
 /* ESTRUTURA MENU */
-
-/*-------------------- CONTEINER MENU --------------------*/
 header .container {
-  display: flex; /* horizontaliza */
-  align-items: center; /* alinha */
-  width: 100%; /* centaliza */
-  padding-left: 0.5%; /* distância pra margem esquerda */
-  padding-right: 1%; /* distância pra margem direita */
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
+  padding: 0 1%; 
 }
 
 header {
-  background-color: rgb(214, 3, 3); /* cor de fundo */
-  box-shadow: 0 3px 20px black; /* sombra */
-  display: flex; /* centraliza itens */
-  top: 0%; /* margem de cima */
-  left: 0%; /* margem da esquerda */
-  right: 0%; /* margem da direita */
-  margin-left: 0.8%; /* ajusta a margem esquerda */
-  margin-right: 0.8%; /* ajusta a margem direita */
-  padding-top: 0.5%; /* distância da margem acima pros itens */
-  padding-bottom: 0.5%; /* distância da margem abaixo pros itens */
-  border-bottom-left-radius: 5px; /* arredonda a borda esquerda de baixo */
-  border-bottom-right-radius: 5px; /* arredonda a borda direita de baixo */
-  position: fixed; /* fixa o menu ao rolar pra baixo */
-  z-index: 1000; /* impede qualquer coisa de atrapalhar o menu ao rolar pra baixo */
+  background-color: rgb(214, 3, 3); 
+  box-shadow: 0 3px 20px black; 
+  display: flex; 
+  top: 0; left: 0; right: 0; 
+  margin: 0 0.8%; 
+  padding: 0.5% 0; 
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px; 
+  position: fixed; 
+  z-index: 1000; 
 }
 
-/*-------------------- LOGO --------------------*/
-header .logo {
-  width: 3%; /* tamanho */
-  transition: transform 0.5s ease; /* tempo de transição suavizada */
-}
+header .logo { width: 3%; transition: transform 0.5s ease; cursor: pointer; }
+header .logo:hover { transform: scale(1.1); }
 
-header .logo:hover {
-  transform: scale(1.1); /* zoom */
-}
-
-/*-------------------- "FlaNews" --------------------*/
 header h1 {
-  color: white; /* cor */
-  font-size: 2.5rem; /* tamanho da fonte */
-  font-weight: 150; /* expessura */
-  font-style: italic;
-  margin: 0; /* zera todas as margens */
-  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
+  color: white; font-size: 2.5rem; font-weight: 900; font-style: italic;
+  margin: 0 0 0 15px; transition: all 0.5s ease; cursor: pointer;
 }
+header h1:hover { color: #222; transform: scale(1.04); text-shadow: 5px 5px 5px #222; }
 
-header h1:hover {
-  color: #222; /* cor da transição */
-  transform: scale(1.04); /* zoom */
-  text-shadow: 5px 5px 5px #222; /* sombra */
-}
-
-/*-------------------- BOTÕES --------------------*/
 nav a {
-  color: white; /* cor */
-  text-decoration: none; /* remove as linhas */
-  font-size: 1.2rem; /* tamanho da fonte */
-  padding: 0px 30px; /* distância pra margem e espaçamento */
-  display: flex; /* permite mover as palavras */
-  display: inline-block; /* alinha */
-  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
-  font-family: "Lucida Sans Regular"; /* fonte */
-  font-size: 1.1rem; /* taamanho da fonte */
-  font-weight: 500; /* espessura da fonte */
+  color: white; text-decoration: none; padding: 0px 30px; 
+  display: inline-block; transition: all 0.5s ease; 
+  font-size: 1.1rem; font-weight: 700; 
 }
+nav a:hover { color: #222; transform: scale(1.04); text-shadow: 5px 5px 5px #222; }
 
-nav a:hover {
-  color: #222; /* cor da transição */
-  transform: scale(1.04); /* zoom */
-  text-shadow: 5px 5px 5px #222; /* sombra */
-}
+nav { display: flex; justify-content: center; flex-grow: 1; }
+nav li { display: inline; }
+nav ul { list-style-type: none; margin: 0; padding: 0; }
 
-nav {
-  display: flex; /* permite mover as caixas dos botões */
-  justify-content: center; /* centraliza as caixas */
-  flex-grow: 1; /* permite que os itens ocupem o espaço restante de forma proporcional */
-}
-
-nav li {
-  display: inline; /* alinha as caixas lado a lado */
-}
-
-nav ul {
-  list-style-type: none; /* remove a bolinha das palavras */
-  margin: 0; /* zera todas as margens */
-}
-
-/*-------------------- BUSCAR --------------------*/
 .search-bar {
-  background-color: #222; /* cor de fundo */
-  color: #222; /* cor do texto digitado */
-  border: 1px #222; /* cor da borda */
-  border-radius: 5px; /* arredonda a borda */
-  padding: 8px 10px; /* espessura e largura */
-  font-size: 1rem; /* tamanho */
-  transition: transform 0.5s ease; /* tempo de transição suavizada */
+  background-color: #222; color: #222; border: 1px #222; border-radius: 5px; 
+  padding: 8px 10px; font-size: 1rem; transition: transform 0.5s ease; 
 }
+.search-bar:hover { transform: scale(1.04); }
+.search-bar:focus { background-color: white; outline: none; }
 
-.search-bar:hover {
-  transform: scale(1.04); /* zoom da barra */
-}
-
-.search-bar:focus {
-  background-color: white; /* cor da transição */
-  outline: none; /* remove a linha de contorno*/
-}
-
-/* ESTRUTURA TABELA */
-
-/*-------------------- "Tabela do Campeonato Brasileiro 2024" --------------------*/
+/* =========================================
+   ESTRUTURA TABELA 
+   ========================================= */
 .tabela-brasileirao h2 {
-  color: white; /* cor do texto */
-  font-size: 2.5rem; /* tamanho da fonte do texto */
-  text-align: center; /* centraliza */
+  color: white; 
+  font-size: 2.2rem; 
+  text-align: center; 
+  margin-bottom: 20px;
 }
 
-/*-------------------- CAIXA --------------------*/
 .tabela-brasileirao {
-  background-color: #222; /* cor de fundo */
-  color: white; /* cor do texto */
-  width: 48%; /* espessura */
-  margin: auto; /* margem */
-  padding: 20px; /* margens internas */
-  padding-top: 3%; /* distancia o conteúdo da página inteira da margem do topo */
+  background-color: #1e1e1e; 
+  color: white; 
+  width: 65%; /* Tabela estreita e compacta */
+  max-width: 1000px; 
+  margin: 110px auto 50px auto; 
+  padding: 20px; 
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); 
+  overflow-x: auto; 
 }
 
-/*-------------------- TABELA --------------------*/
 table {
-  width: 100%; /* espessura */
-  border-collapse: collapse; /* juntas as bordas, tornando-as única */
-  text-align: left; /* alinha o conteúdo à esquerda */
-  font-family: "Lucida Sans Regular"; /* fonte */
+  width: 100%; 
+  border-collapse: collapse; 
+  text-align: center; /* Centraliza a tabela inteira por padrão */
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden; 
 }
 
 th {
-  background-color: rgb(214, 3, 3); /* cor de fundo da descrição */
-  color: white; /* cor do texto da descrição */
-  box-shadow: 0 3px 20px black; /* sombra */
-  text-align: center; /* centaliza dentro das caixas */
-  font-size: 1rem; /* tamanho do texto */
-  font-family: "Lucida Sans Regular"; /* fonte do texto da descrição*/
+  background-color: rgb(214, 3, 3); 
+  color: white; 
+  padding: 12px 8px; 
+  font-size: 0.85rem; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
 }
 
 td {
-  background-color: #222; /* cor de fundo */
-  color: white; /* cor do texto */
-  box-shadow: 0 3px 20px black; /* sombra */
-  align-items: center; /* alinha a imagem e o texto verticalmente */
+  padding: 10px 8px; 
+  color: #dcdcdc; 
+  font-size: 0.9rem;
+  border-bottom: 1px solid #333; 
 }
 
-th,
-td {
-  padding: 15px; /* espaçamento entre as bordas e o conteúdo */
-  border: 1px solid #444; /* cor das bordas */
+tbody tr:nth-of-type(even) { background-color: #2a2a2a; }
+tbody tr { transition: background-color 0.2s ease; }
+tbody tr:hover { background-color: #444; cursor: default; }
+
+/* =========================================
+   CORREÇÃO DO ALINHAMENTO "CLUBE"
+   ========================================= */
+/* Aplica o alinhamento tanto no título (th) quanto nas células (td) */
+th.coluna-clube, 
+td.coluna-clube {
+  text-align: left; 
+  padding-left: 25px; /* Empurra o texto e o escudo um pouco pra direita */
 }
 
-/*-------------------- ESCUDOS -------------------- */
+td.coluna-clube {
+  font-weight: 700;
+  color: white;
+  white-space: nowrap; 
+}
+
+/* O escudo usa alinhamento vertical nativo para não quebrar a tabela */
 table td img.logo {
-  width: 40px; /* largura */
-  height: 40px; /* altura */
-  margin-right: 10px; /* Espaçamento entre o escudo e o nome */
-  vertical-align: middle; /* alinha verticalmente a imagem com o texto */
-  display: inline-block; /* mantém a imagem e o texto na mesma linha */
+  width: 26px; 
+  height: 26px; 
+  margin-right: 12px; 
+  vertical-align: middle; 
+  display: inline-block;
 }
+
+/* =========================================
+   ÚLTIMOS JOGOS 
+   ========================================= */
+.bolinhas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; 
+}
+
+.bolinha {
+  width: 10px; 
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5); 
+}
+
+.bolinha.v { background-color: #00b16a; } 
+.bolinha.d { background-color: #d9534f; } 
+.bolinha.e { background-color: #95a5a6; } 
 
 /*-------------------- RODAPÉ --------------------*/
-footer {
-  background-color: #222; /* cor de fundo */
-  color: white; /* cor do texto */
-  text-align: center; /* centraliza o texto */
-}
+footer { background-color: #222; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }

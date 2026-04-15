@@ -1,20 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" conte nt="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações Rubro-Negras | FlaNews</title>
-    <link rel="icon" href="ESCUDO-FLA.webp" type="image/webp" />
+    <link rel="icon" href="flamengo.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="container">
-        <img
-          src="ESCUDO-FLA.webp"
-          alt="Logo do Flamengo"
-          class="logo"
-        />
+        <img src="flamengo.png" alt="Logo do Flamengo" class="logo" />
         <h1>FlaNews</h1>
         <nav>
           <ul>
@@ -26,137 +22,134 @@
         <input type="text" class="search-bar" placeholder="Buscar..." />
       </div>
     </header>
-    <section id="noticias">
-      <div class="container">
-        <h2>Últimas Notícias</h2>
-        <div class="noticias" id="noticias-list"></div>
-      </div>
-    </section>
-    <section id="jogo">
-      <div class="container">
-        <div class="jogos-container">
-          <div class="jogo">
-            <h3>Próximo Jogo</h3>
-            <table>
-              <tr>
-                <th>Competição</th>
-                <td>Brasileirão</td>
-              </tr>
-              <tr>
-                <th>Data</th>
-                <td>26/11/24</td>
-              </tr>
-              <tr>
-                <th>Horário</th>
-                <td>20h</td>
-              </tr>
-              <tr>
-                <th>Local</th>
-                <td>Arena Castelão, Fortaleza</td>
-              </tr>
-              <tr>
-                <th>Adversário</th>
-                <td>
-                  <img
-                    src="ESCUDO-FORTAL.webp"
-                    alt="Logo do Fortaleza"
-                    class="logo"
-                  />
-                </td>
-              </tr>
-            </table>
+
+    <main>
+      <section id="noticias" class="news-page">
+        <div class="container">
+          <h2 class="section-title">Últimas Notícias</h2>
+          <div class="noticias-grid" id="noticias-list"></div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard-page">
+        <div class="container dashboard-grid">
+          <div class="dash-coluna">
+            <h2 class="section-title">Próximo Jogo</h2>
+            <div class="card-jogo">
+              <div
+                class="card-header"
+                style="background-color: #d4af37; color: #000"
+              >
+                <span class="competicao-nome">Libertadores</span>
+                <span class="competicao-fase">Fase de Grupos</span>
+              </div>
+              <div class="card-body">
+                <div class="confronto">
+                  <div class="time">
+                    <img
+                      src="flamengo.png"
+                      alt="Flamengo"
+                      class="escudo-jogo"
+                    />
+                    <p>Flamengo</p>
+                  </div>
+                  <div class="vs">X</div>
+                  <div class="time">
+                    <img
+                      src="indep-medel.png"
+                      alt="Indep. Medellín"
+                      class="escudo-jogo"
+                    />
+                    <p>Indep. Medellín</p>
+                  </div>
+                </div>
+                <div class="detalhes-jogo">
+                  <p><strong>📅 Data:</strong> 16/04/26</p>
+                  <p><strong>⏰ Horário:</strong> 21h30</p>
+                  <p><strong>🏟️ Local:</strong> Maracanã, RJ</p>
+                </div>
+              </div>
+            </div>
           </div>
-            <div class="classificacao" id="classificacao">
-              <h3>Classificação</h3>
+
+          <div class="dash-coluna">
+            <h2 class="section-title">Classificação G4</h2>
+            <div class="tabela-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Posição</th>
+                    <th>Pos</th>
                     <th>Clube</th>
-                    <th>J</th>
                     <th>P</th>
                     <th>V</th>
-                    <th>E</th>
-                    <th>D</th>
                     <th>SG</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>
+                    <td class="clube-col">
                       <img
-                        src="ESCUDO-BOTAFOGO.webp"
-                        alt="Logo do Botafogo"
-                        class="logo"
+                        src="palmeiras.png"
+                        alt="Palmeiras"
+                        class="logo-tabela"
                       />
+                      Palmeiras
                     </td>
-                    <td>33</td>
-                    <td>68</td>
-                    <td>20</td>
-                    <td>8</td>
-                    <td>5</td>
                     <td>26</td>
+                    <td>8</td>
+                    <td>11</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>
+                    <td class="clube-col">
                       <img
-                        src="ESCUDO-PALMEIRAS.webp"
-                        alt="Logo do Palmeiras"
-                        class="logo"
+                        src="flamengo.png"
+                        alt="Flamengo"
+                        class="logo-tabela"
                       />
+                      Flamengo
                     </td>
-                    <td>33</td>
-                    <td>64</td>
-                    <td>19</td>
-                    <td>7</td>
-                    <td>7</td>
-                    <td>27</td>
+                    <td>20</td>
+                    <td>6</td>
+                    <td>8</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>
-                      <img
-                        src="ESCUDO-FORTAL.webp"
-                        alt="Logo do Fortaleza"
-                        class="logo"
-                      />
+                    <td class="clube-col">
+                      <img src="sp.png" alt="São Paulo" class="logo-tabela" />
+                      São Paulo
                     </td>
-                    <td>33</td>
-                    <td>63</td>
-                    <td>18</td>
-                    <td>9</td>
+                    <td>20</td>
                     <td>6</td>
-                    <td>15</td>
+                    <td>6</td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>
+                    <td class="clube-col">
                       <img
-                        src="ESCUDO-FLA.webp"
-                        alt="Logo do Flamengo"
-                        class="logo"
+                        src="fluminense.png"
+                        alt="Fluminense"
+                        class="logo-tabela"
                       />
+                      Fluminense
                     </td>
-                    <td>33</td>
-                    <td>59</td>
-                    <td>17</td>
-                    <td>8</td>
-                    <td>8</td>
-                    <td>14</td>
+                    <td>20</td>
+                    <td>6</td>
+                    <td>5</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+
     <footer>
       <div class="container">
         <p>
-          &copy; 2024 FlaNews | CNPJ - 24.062.004/1219.81 | Todos os direitos
+          &copy; 2026 FlaNews | CNPJ - 24.062.004/1219.81 | Todos os direitos
           reservados
         </p>
       </div>

@@ -1,196 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Roboto:wght@400;500;700&display=swap');
+
 /*-------------------- ESTRUTURA PÁGINA --------------------*/
 body {
-  color: white; /* cor do texto da página */
-  font-family: Arial, sans-serif; /* fontes */
-  background-color: #222; /* cor de fundo */
-  line-height: 1.7; /* distância entre duas linhas */
-  padding-top: 10px; /* distância do conteúdo pro topo */
+  color: white; 
+  font-family: 'Roboto', sans-serif; 
+  background-color: #222; 
+  line-height: 1.7; 
+  margin: 0;
+  padding-top: 10px;
+}
+
+h1, h2, h3, nav a, th {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*-------------------- BARRA DE ROLAGEM --------------------*/
-/* apenas para ocultamento */
-::-webkit-scrollbar {
-  width: 17px; /* propoção da barra (% oculta) */
-}
+::-webkit-scrollbar { width: 17px; }
+::-webkit-scrollbar-track { background-color: #222; }
+::-webkit-scrollbar-thumb { background-color: rgb(58, 58, 58); }
 
-::-webkit-scrollbar-track {
-  background-color: #222; /* cor de fundo */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(58, 58, 58); /* cor do scroll */
-}
-
-/* ESTRUTURA MENU */
-
-/*-------------------- CONTEINER MENU --------------------*/
+/*-------------------- CABEÇALHO --------------------*/
 header .container {
-  display: flex; /* horizontaliza */
-  align-items: center; /* alinha */
-  width: 100%; /* centaliza */
-  padding-left: 0.5%; /* distância pra margem esquerda */
-  padding-right: 1%; /* distância pra margem direita */
+  display: flex; 
+  align-items: center; 
+  width: 100%; 
+  padding: 0 1%; 
 }
 
 header {
-  background-color: rgb(214, 3, 3); /* cor de fundo */
-  box-shadow: 0 3px 20px black; /* sombra */
-  display: flex; /* centraliza itens */
-  top: 0%; /* margem de cima */
-  left: 0%; /* margem da esquerda */
-  right: 0%; /* margem da direita */
-  margin-left: 0.8%; /* ajusta a margem esquerda */
-  margin-right: 0.8%; /* ajusta a margem direita */
-  padding-top: 0.5%; /* distância da margem acima pros itens */
-  padding-bottom: 0.5%; /* distância da margem abaixo pros itens */
-  border-bottom-left-radius: 5px; /* arredonda a borda esquerda de baixo */
-  border-bottom-right-radius: 5px; /* arredonda a borda direita de baixo */
-  position: fixed; /* fixa o menu ao rolar pra baixo */
-  z-index: 1000; /* impede qualquer coisa de atrapalhar o menu ao rolar pra baixo */
+  background-color: rgb(214, 3, 3); 
+  box-shadow: 0 3px 20px black; 
+  display: flex; 
+  top: 0; left: 0; right: 0; 
+  margin: 0 0.8%; 
+  padding: 0.5% 0; 
+  border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px; 
+  position: fixed; 
+  z-index: 1000; 
 }
 
-/*-------------------- LOGO --------------------*/
-header .logo {
-  width: 3%; /* tamanho */
-  transition: transform 0.5s ease; /* tempo de transição suavizada */
-}
+header .logo { width: 3%; transition: transform 0.5s ease; cursor: pointer; }
+header .logo:hover { transform: scale(1.1); }
 
-header .logo:hover {
-  transform: scale(1.1); /* zoom */
-}
-
-/*-------------------- "FlaNews" --------------------*/
 header h1 {
-  color: white; /* cor */
-  font-size: 2.5rem; /* tamanho da fonte */
-  font-weight: 150; /* expessura */
-  font-style: italic; /* estilo na fonte */
-  margin: 0; /* zera todas as margens */
-  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
+  color: white; 
+  font-size: 2.5rem; 
+  font-weight: 900; 
+  font-style: italic; 
+  margin: 0 0 0 15px; 
+  transition: all 0.5s ease; 
+  cursor: pointer;
 }
+header h1:hover { color: #222; transform: scale(1.04); text-shadow: 5px 5px 5px #222; }
 
-header h1:hover {
-  color: #222; /* cor da transição */
-  transform: scale(1.04); /* zoom */
-  text-shadow: 5px 5px 5px #222; /* sombra */
-}
+nav { display: flex; justify-content: center; flex-grow: 1; }
+nav ul { list-style-type: none; margin: 0; padding: 0; }
+nav li { display: inline; }
 
-/*-------------------- BOTÕES --------------------*/
 nav a {
-  color: white; /* cor */
-  text-decoration: none; /* remove as linhas */
-  font-size: 1.2rem; /* tamanho da fonte */
-  padding: 0px 30px; /* distância pra margem e espaçamento */
-  display: flex; /* permite mover as palavras */
-  display: inline-block; /* alinha */
-  transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
-  font-family: "Lucida Sans Regular"; /* fonte */
-  font-size: 1.1rem; /* tamaanho da fonte */
-  font-weight: 500; /* espessura da fonte */
+  color: white; 
+  text-decoration: none; 
+  padding: 0px 30px; 
+  display: inline-block; 
+  transition: all 0.5s ease; 
+  font-size: 1.1rem; 
+  font-weight: 700; 
 }
+nav a:hover { color: #222; transform: scale(1.04); text-shadow: 5px 5px 5px #222; }
 
-nav a:hover {
-  color: #222; /* cor da transição */
-  transform: scale(1.04); /* zoom */
-  text-shadow: 5px 5px 5px #222; /* sombra */
-}
-
-nav {
-  display: flex; /* permite mover as caixas dos botões */
-  justify-content: center; /* centraliza as caixas */
-  flex-grow: 1; /* permite que os itens ocupem o espaço restante de forma proporcional */
-}
-
-nav li {
-  display: inline; /* alinha as caixas lado a lado */
-}
-
-nav ul {
-  list-style-type: none; /* remove a bolinha das palavras */
-  margin: 0; /* zera todas as margens */
-}
-
-/*-------------------- BUSCAR --------------------*/
 .search-bar {
-  background-color: #222; /* cor de fundo */
-  color: #222; /* cor do texto digitado */
-  border: 1px #222; /* cor da borda */
-  border-radius: 5px; /* arredonda a borda */
-  padding: 8px 10px; /* espessura e largura */
-  font-size: 1rem; /* tamanho */
-  transition: transform 0.5s ease; /* tempo de transição suavizada */
+  background-color: #222; 
+  color: #222; 
+  border: 1px #222; 
+  border-radius: 5px; 
+  padding: 8px 10px; 
+  font-size: 1rem; 
+  transition: transform 0.5s ease; 
+}
+.search-bar:hover { transform: scale(1.04); }
+.search-bar:focus { background-color: white; outline: none; }
+
+/* =========================================
+   ESTRUTURA DE NOTÍCIAS (GRID DE CARDS)
+   ========================================= */
+.news-page {
+  padding: 120px 5% 50px 5%; 
 }
 
-.search-bar:hover {
-  transform: scale(1.04); /* zoom da barra */
+.news-page h2 {
+  color: white; 
+  font-size: 2.5rem; 
+  margin-bottom: 40px; 
+  text-align: center; 
 }
 
-.search-bar:focus {
-  background-color: white; /* cor da transição */
-  outline: none; /* remove a linha de contorno*/
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start; /* <--- A MÁGICA ACONTECE AQUI! Evita que os outros cards estiquem */
 }
 
-/* ESTRUTURA NOTÍCIAS */
-
-/*-------------------- "Últimas Notícias" --------------------*/
-section h2 {
-  color: white; /* cor da fonte */
-  font-size: 2.5rem; /* tamanho da fonte */
-  margin-bottom: 1.5%; /* define a distância para as caixas */
-  text-align: center; /* centraliza */
+.news-card {
+  background-color: #1e1e1e; 
+  border-radius: 12px;
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section {
-  padding: 1%; /* distancia o conteúdo da página inteira de todas as margens */
-  padding-top: 3%; /* distancia o conteúdo da página inteira da margem do topo */
+.news-card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
 }
 
-/*-------------------- CAIXAS --------------------*/
-.noticia {
-  background: #222; /* cor de fundo */
-  color: white; /* cor do texto */
-  padding: 25px; /* espaçamento interno */
-  width: 35%; /* espessura */
-  margin-bottom: 5rem; /* espaçamento entre as caixas */
-  border-top-right-radius: 15px; /* arredonda a borda direita de cima */
-  border-bottom-left-radius: 15px; /* arredonda a borda esquerda de baixo */
-  box-shadow: 0 3px 20px black; /* tamanho e sombra */
-  transition: transform 0.5s ease, box-shadow 0.5s ease; /* tempo de transição suavizada */
+.news-image {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover; 
+  object-position: top; 
 }
 
-.noticia:hover {
-  transform: scale(1.2); /* zoom na caixa */
-  box-shadow: 0 3px 20px black; /* tamanho e cor da sombra */
+.news-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
 }
 
-/*-------------------- IMAGEM --------------------*/
-.imagem-noticia {
-  width: 100%; /* tamanho */
-  margin-bottom: 3%; /* espaçamento entre o título */
-  border-radius: 5px; /* arredondada as bordas */
+.news-title {
+  color: rgb(214, 3, 3);
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 1.3;
 }
 
-/*-------------------- TÍTULO --------------------*/
-.noticia h3 {
-  color: rgb(214, 3, 3); /* cor do título */
-  font-size: 1.5rem; /* tamanho da fonte */
-  text-align: center; /* centraliza */
-  margin: 0; /* zera todas as margens */
+.news-text {
+  color: #dcdcdc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex-grow: 1; 
 }
 
-/*-------------------- NOTÍCIA --------------------*/
-.noticias {
-  display: flex; /* alinhar */
-  flex-direction: column; /* caixas empilhadas verticalmente */
-  align-items: center; /* centraliza as caixas verticalmente */
-  justify-content: center; /* centraliza */
-  margin-top: 2%; /* distância do topo da seção */
-  text-align: left; /* alinha o conteúdo das notícias à esquerda */
+/* -------------------------------------
+   EFEITO DE EXPANDIR (ACORDEÃO) 
+   ------------------------------------- */
+
+.news-full-text {
+  max-height: 0;          
+  overflow: hidden;       
+  opacity: 0;             
+  transition: max-height 0.6s ease, opacity 0.6s ease, margin 0.6s ease; 
+}
+
+.news-full-text p {
+  color: #a9a9a9;         
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  padding-bottom: 25px;   
+}
+
+.news-card.expanded .news-full-text {
+  max-height: 800px;      
+  opacity: 1;             
+  margin-top: -10px;      
+}
+
+.leia-mais {
+  background-color: rgb(214, 3, 3);
+  color: white;
+  border: none;           
+  cursor: pointer;        
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: flex-start; 
+  transition: background-color 0.3s ease;
+}
+
+.leia-mais:hover {
+  background-color: #a00000; 
 }
 
 /*-------------------- RODAPÉ --------------------*/
 footer {
-  background-color: #222; /* cor de fundo */
-  color: white; /* cor do texto */
-  text-align: center; /* centraliza o texto */
+  background-color: #222; 
+  color: white; 
+  text-align: center; 
+  padding: 20px 0;
+  margin-top: 40px;
 }

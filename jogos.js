@@ -1,53 +1,106 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Captura os elementos da logo e do título
   const logo = document.querySelector(".logo");
   const titulo = document.querySelector("header h1");
 
-  // Função para redirecionar para a página principal
   function voltarParaPaginaPrincipal() {
-    window.location.href = "index.html"; // Altere "index.html" se a sua página principal tiver outro nome
+    window.location.href = "index.html";
   }
 
-  // Adiciona o evento de clique na logo e no título
   logo.addEventListener("click", voltarParaPaginaPrincipal);
   titulo.addEventListener("click", voltarParaPaginaPrincipal);
 
-  // código de rolagem suave para os links de navegação
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault(); // impede o comportamento padrão de rolagem do link
-
-      const targetId = this.getAttribute("href").substring(1); // Obtém o ID do destino
-      const targetElement = document.getElementById(targetId); // Elemento de destino
-
-      // calcula o offset do topo e ajusta a rolagem
-      const headerHeight = document.querySelector("header").offsetHeight;
-      const targetOffsetTop = targetElement.offsetTop;
-
-      // ajusta a rolagem levando em consideração a altura do cabeçalho
-      window.scrollTo({
-        top: targetOffsetTop - headerHeight, // ajusta para a altura do cabeçalho
-        behavior: "smooth", // rolagem suave
-      });
-    });
-  });
-
-  // adiciona o evento de captura de digitação na barra de pesquisa
   const searchBar = document.querySelector(".search-bar");
   searchBar.addEventListener("input", function () {
     const query = searchBar.value.toLowerCase().trim();
 
-    // verifica o valor digitado e redireciona para a página correspondente
     if (query === "menu") {
-      window.location.href = "index.html"; // redireciona para a página principal
-    } else if (query === "noticia") {
-      window.location.href = "notícias.html"; // redireciona para a página de Notícias
-    } else if (query === "tabela") {
-      window.location.href = "classificação.html"; // redireciona para a página da Tabela Brasileirão
-    } else if (query === "classificacao") {
-      window.location.href = "classificação.html"; // redireciona para a página da Tabela Brasileirão
-    } else if (query === "brasileirao") {
-      window.location.href = "classificação.html"; // redireciona para a página da Tabela Brasileirão
+      window.location.href = "index.html";
+    } else if (query === "noticia" || query === "notícias") {
+      window.location.href = "notícias.html";
+    } else if (
+      query === "tabela" ||
+      query === "classificacao" ||
+      query === "brasileirao"
+    ) {
+      window.location.href = "classificação.html";
     }
+  });
+
+  // Array com os próximos jogos divididos por competição
+  const proximosJogos = [
+    {
+      competicao: "Libertadores",
+      fase: "Fase de Grupos",
+      data: "16/04/26",
+      horario: "21h30",
+      estadio: "Maracanã, RJ",
+      mandante: "Flamengo",
+      escudoMandante: "flamengo.png",
+      visitante: "Indep. Medellín",
+      escudoVisitante: "indep-medel.png",
+      corCabecalho: "#D4AF37", // Dourado Libertadores
+      corTexto: "#000",
+    },
+    {
+      competicao: "Brasileirão",
+      fase: "12ª Rodada",
+      data: "19/04/26",
+      horario: "16h00",
+      estadio: "Allianz Parque, SP",
+      mandante: "Palmeiras",
+      escudoMandante: "palmeiras.png",
+      visitante: "Flamengo",
+      escudoVisitante: "flamengo.png",
+      corCabecalho: "#00b16a", // Verde Brasileirão
+      corTexto: "#fff",
+    },
+    {
+      competicao: "Copa do Brasil",
+      fase: "3ª Fase - Ida",
+      data: "23/04/26",
+      horario: "20h00",
+      estadio: "Maracanã, RJ",
+      mandante: "Flamengo",
+      escudoMandante: "flamengo.png",
+      visitante: "Vitória",
+      escudoVisitante: "vitoria.png",
+      corCabecalho: "#005baa", // Azul Copa do Brasil
+      corTexto: "#fff",
+    },
+  ];
+
+  const containerJogos = document.getElementById("jogos-container");
+
+  // Renderiza os cards na tela
+  proximosJogos.forEach((jogo) => {
+    const card = document.createElement("div");
+    card.classList.add("card-jogo");
+
+    card.innerHTML = `
+      <div class="card-header" style="background-color: ${jogo.corCabecalho}; color: ${jogo.corTexto};">
+        <span class="competicao-nome">${jogo.competicao}</span>
+        <span class="competicao-fase">${jogo.fase}</span>
+      </div>
+      <div class="card-body">
+        <div class="confronto">
+          <div class="time">
+            <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo-jogo">
+            <p>${jogo.mandante}</p>
+          </div>
+          <div class="vs">X</div>
+          <div class="time">
+            <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo-jogo">
+            <p>${jogo.visitante}</p>
+          </div>
+        </div>
+        <div class="detalhes-jogo">
+          <p><strong>📅 Data:</strong> ${jogo.data}</p>
+          <p><strong>⏰ Horário:</strong> ${jogo.horario}</p>
+          <p><strong>🏟️ Local:</strong> ${jogo.estadio}</p>
+        </div>
+      </div>
+    `;
+
+    containerJogos.appendChild(card);
   });
 });
