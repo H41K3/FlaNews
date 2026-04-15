@@ -18,6 +18,6 @@ O **FlaNews** é um projeto de portal de notícias focado em entregar uma experi
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/H41K3/FlaNews.git .
 
 2. Abra o arquivo index.html no seu navegador de preferência.
